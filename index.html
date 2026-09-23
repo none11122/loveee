@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Для тебя 💖</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Превью ссылки для Telegram -->
+    <meta property="og:title" content="💖 Для тебя, любимая">
+    <meta property="og:description" content="У меня есть кое-что важное... Открой 💌">
+    <meta property="og:image" content="file/cat1.png">
+    <meta property="og:type" content="website">
+</head>
+<body>
+
+    <!-- Фоновая музыка -->
+    <audio id="bgMusic" src="file/music.mp3" loop preload="auto"></audio>
+
+    <!-- Плавающие сердечки -->
+    <div class="hearts-bg" id="heartsBg"></div>
+
+    <!-- Коты -->
+    <img src="file/cat1.png" alt="" class="cat cat-top-left" onerror="this.style.display='none'">
+    <img src="file/cat2.png" alt="" class="cat cat-bottom-right" onerror="this.style.display='none'">
+    <img src="file/cat3.png" alt="" class="cat cat-top-right" onerror="this.style.display='none'">
+
+    <div class="container">
+
+        <!-- ШАГ 1 -->
+        <section class="step active" id="step1">
+            <h2 class="question">Сколько месяцев мы уже вместе?</h2>
+            <select id="monthsSelect">
+                <option value="" disabled selected>Выбери цифру</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <button class="check-btn" data-step="1">Проверить</button>
+        </section>
+
+        <!-- ШАГ 2 -->
+        <section class="step" id="step2">
+            <h2 class="question">Где мы чаще всего проводили время вместе?</h2>
+            <div class="options" id="placeOptions">
+                <button class="option-btn" data-value="Бармыш">Бармыш</button>
+                <button class="option-btn" data-value="Берёзовая роща">Берёзовая роща</button>
+                <button class="option-btn" data-value="У тебя дома">У тебя дома</button>
+                <button class="option-btn" data-value="Дальняя Пятёрочка">Дальняя Пятёрочка</button>
+                <button class="option-btn" data-value="У Ксюши">У Ксюши</button>
+                <button class="option-btn" data-value="У меня">У меня</button>
+            </div>
+            <button class="check-btn" data-step="2" disabled>Проверить</button>
+        </section>
+
+        <!-- ШАГ 3 -->
+        <section class="step" id="step3">
+            <h2 class="question">Какой у меня рост?</h2>
+            <div class="input-wrap">
+                <input type="number" id="heightInput" inputmode="numeric" pattern="[0-9]*" placeholder="Число">
+                <span class="unit">см</span>
+            </div>
+            <button class="check-btn" data-step="3">Проверить</button>
+        </section>
+
+        <!-- ШАГ 4 -->
+        <section class="step" id="step4">
+            <p class="message-text">
+                Напиши мне здесь всё, что ты хотела бы сказать, высказать, выплеснуть.
+                Можно не только хорошее, но и плохое. Я не осужу, а пойму и сделаю всё,
+                чтобы это больше не повторялось. Можешь хотя бы написать, что «Всё нормально» 💌
+            </p>
+            <textarea id="loveMessage" placeholder="Пиши сюда всё, что на душе..."></textarea>
+            <button class="check-btn" id="sendBtn">Отправить</button>
+            <p id="sendStatus" class="send-status"></p>
+        </section>
+
+        <!-- ШАГ 4.5 — СЕРДЕЧКО -->
+        <section class="step" id="stepHeart">
+            <button class="heart-btn" id="heartBtn" aria-label="Нажми на сердечко">❤️</button>
+            <p class="press-hint">ЖМИ 👆</p>
+        </section>
+
+        <!-- ШАГ 5 — ВИДЕО -->
+        <section class="step" id="step5">
+            <div id="videoWrap">
+                <video id="finalVideo" playsinline preload="auto" controls webkit-playsinline x5-playsinline>
+                    <source src="file/video.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+                <div id="rotateOverlay" class="rotate-overlay">
+                    <div class="rotate-icon">📱</div>
+                    <div class="rotate-text">Поверни телефон горизонтально</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ШАГ 6 -->
+        <section class="step" id="step6">
+            <h2 class="question">Понравилось?</h2>
+            <div class="answers">
+                <button class="answer-btn" id="yesBtn">ДА!!</button>
+                <button class="answer-btn" id="noBtn">НЕТ</button>
+            </div>
+        </section>
+
+        <!-- ШАГ 7 -->
+        <section class="step" id="step7">
+            <h1 class="thanks">Спасибо тебе за всё! 💖</h1>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
